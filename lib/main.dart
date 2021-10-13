@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moto_services/main/main_screens.dart';
 import 'package:moto_services/provider/bikes.dart';
 import 'package:moto_services/provider/partners.dart';
 import 'package:moto_services/routes/app_routes.dart';
@@ -28,15 +29,15 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Moto Services',
-        // home: MyStatefulWidget(),
+        home: MainScreen(),
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        routes: {
-          AppRoutes.HOME: (_) => MyStatefulWidget(),
-          AppRoutes.BIKE_FORM: (_) => BikeForm(),
-          AppRoutes.USER_BIKES: (_) => BikeList()
-        },
+        // routes: {
+        //   AppRoutes.HOME: (_) => PartnerList(),
+        //   AppRoutes.BIKE_FORM: (_) => BikeForm(),
+        //   AppRoutes.USER_BIKES: (_) => BikeList()
+        // },
       ),
     );
   }

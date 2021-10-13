@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:moto_services/components/bike_tile.dart';
 import 'package:moto_services/provider/bikes.dart';
-import 'package:moto_services/routes/app_routes.dart';
+import 'package:moto_services/views/bike_form.dart';
 import 'package:provider/provider.dart';
 
 class BikeList extends StatelessWidget {
@@ -11,15 +11,17 @@ class BikeList extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Minhas Motos"),
+        title: const Text("Minhas Motos"),
         actions: [
           IconButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed(
-                AppRoutes.BIKE_FORM,
-              );
-            },
-            icon: Icon(Icons.add),
+            onPressed: () => Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => BikeForm(),
+                settings: const RouteSettings(arguments: null)
+              ),
+            ),
+            icon: const Icon(Icons.add),
           ),
         ],
       ),

@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:moto_services/models/bike.dart';
 import 'package:moto_services/provider/bikes.dart';
 import 'package:moto_services/routes/app_routes.dart';
+import 'package:moto_services/views/bike_form.dart';
 import 'package:provider/provider.dart';
 
 class BikeTile extends StatelessWidget {
   final Bike bike;
 
   const BikeTile(this.bike);
-
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +25,13 @@ class BikeTile extends StatelessWidget {
         child: Row(
           children: <Widget>[
             IconButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed(
-                  AppRoutes.BIKE_FORM,
-                  arguments: bike,
+              onPressed: () {  
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BikeForm(),
+                    settings: RouteSettings(arguments: bike),
+                  ),
                 );
               },
               color: Colors.black,
@@ -50,7 +53,8 @@ class BikeTile extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: () {
-                          Provider.of<Bikes>(context, listen: false).remove(bike);
+                          Provider.of<Bikes>(context, listen: false)
+                              .remove(bike);
                           Navigator.of(context).pop();
                         },
                         child: Text("Sim"),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:moto_services/main/main_screens.dart';
 import 'package:moto_services/models/bike.dart';
 import 'package:moto_services/provider/bikes.dart';
-import 'package:moto_services/routes/app_routes.dart';
 import 'package:provider/provider.dart';
 
 class BikeForm extends StatelessWidget {
@@ -45,7 +45,20 @@ class BikeForm extends StatelessWidget {
                     tumbnailUrl: "",
                   ),
                 );
-                Navigator.of(context).pop();
+     
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('Sucesso!'),
+                    duration: Duration(seconds: 2),
+                    backgroundColor: Colors.blueGrey,
+                  ),
+                );
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MainScreen(index: 1),
+                  ),
+                );
               }
             },
             icon: const Icon(Icons.save),
