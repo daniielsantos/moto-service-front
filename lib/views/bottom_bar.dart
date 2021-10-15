@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moto_services/provider/bikes.dart';
+import 'package:moto_services/provider/orders.dart';
 import 'package:moto_services/views/bike_list.dart';
 import 'package:moto_services/views/order_list.dart';
 import 'package:moto_services/views/partner_list.dart';
@@ -34,7 +35,7 @@ class _BottomBar extends State<MyStatefulWidget> {
       providers: [
         ChangeNotifierProvider(
           create: (ctx) => Bikes(),
-        )
+        ),
       ],
       child: Scaffold(
         body: Center(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moto_services/models/bike.dart';
 import 'package:moto_services/provider/bikes.dart';
-import 'package:moto_services/routes/app_routes.dart';
 import 'package:moto_services/views/bike_form.dart';
 import 'package:provider/provider.dart';
 
@@ -34,7 +33,7 @@ class BikeTile extends StatelessWidget {
                   ),
                 );
               },
-              color: Colors.black,
+              color: Colors.black26,
               icon: const Icon(Icons.edit),
             ),
             IconButton(
